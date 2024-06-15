@@ -12,19 +12,9 @@ public class AtividadeApplication {
 		
 
 	}
-	@GetMapping("/")
-    public String showIndexPage() {
-        return "index";
-    }
-
-    @GetMapping("/page1")
-    public String showPage1() {
-        return "page1";
-    }
-
-    @GetMapping("/page2")
-    public String showPage2() {
-        return "page2";
+@GetMapping("/hello")
+    public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
+      return String.format("Hello %s!", name);
     }
 
 
